@@ -18,6 +18,7 @@ class MultipleChoiceQuiz extends Component {
     return (
       <Fragment>
         <div>{currentQuiz.title}</div>
+        <div>{currentQuiz.title}</div>
         <QuizCard {...currentQuestion} />
       </Fragment>
     );
