@@ -3,17 +3,14 @@ import ReactDOM from 'react-dom';
 
 import { quizzes } from './quizzes';
 import './styles.css';
+import MultipleChoiceQuiz from './MultipleChoiceQuiz';
 
 console.log('Here are the quizzes:', quizzes);
 
 const App = () => {
   return (
     <div className="app">
-      <h1>Hello, Worldz!</h1>
-      <p>Thanks so much for taking our frontend takehome assessment!</p>
-      <p>
-        See details in <code>./README.md</code> .
-      </p>
+      <MultipleChoiceQuiz />
     </div>
   );
 };
