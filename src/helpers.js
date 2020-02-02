@@ -8,3 +8,8 @@ export const shuffle = array => {
   }
   return copiedArray;
 };
+
+export const calculatePercentage = (correctAnswers, quizLength) => {
+  const percentage = (correctAnswers / quizLength) * 100;
+  return `${percentage}%`;
+};

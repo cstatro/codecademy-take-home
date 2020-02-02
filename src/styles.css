@@ -1,4 +1,125 @@
+html,
+body,
+#root,
+.app {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
 .app {
   font-family: sans-serif;
   text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.quiz-area {
+  width: 60%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 10% 12% 58% 5% 8% 7%;
+}
+.quiz-title {
+  font-size: 2em;
+  align-self: center;
+  justify-self: center;
+  font-weight: 700;
+}
+.question {
+  font-size: 2em;
+}
+
+.answer-list {
+  list-style: upper-alpha;
+  list-style-position: inside;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+  width: 70%;
+  justify-self: center;
+}
+li {
+  cursor: pointer;
+  width: 80%;
+  font-size: 1.8em;
+  text-align: left;
+}
+.correct {
+  border: solid 2px green;
+}
+.incorrect {
+  border: solid 2px red;
+  text-decoration-line: line-through;
+}
+.next-button {
+  color: white;
+  background: black;
+  height: 90%;
+  width: 50%;
+  font-size: 1.7em;
+  margin: 2%;
+  grid-row-start: 5;
+  justify-self: center;
+  align-self: center;
+}
+.summary {
+  grid-row-start: 3;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+}
+.summary > div {
+  font-size: 1.9em;
+  width: 90%;
+  margin-bottom: 7%;
+}
+.progress-bar {
+  height: 100%;
+  width: 100%;
+  grid-row-start: 6;
+  border: solid 1px black;
+  display: flex;
+}
+.incorrect-progress {
+  background: red;
+}
+.correct-progress {
+  background: green;
+}
+
+@media only screen and (max-width: 600px) {
+  .quiz-area {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 10% 17% 53% 5% 8% 7%;
+    justify-items: center;
+    align-items: center;
+  }
+  .quiz-title {
+    font-size: 1.9em;
+    margin: 5%;
+    margin-bottom: 10%;
+    font-weight: 700;
+    width: 80%;
+  }
+  .question {
+    font-size: 1.7em;
+    width: 90%;
+  }
+
+  .answer-list {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+
+  li {
+    text-align: left;
+    font-size: 1.4em;
+  }
 }
