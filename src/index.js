@@ -8,7 +8,7 @@ import MultipleChoiceQuiz from './MultipleChoiceQuiz';
 const App = () => {
   return (
     <div className="app">
-      <MultipleChoiceQuiz />
+      <MultipleChoiceQuiz quizzes={quizzes} />
     </div>
   );
 };

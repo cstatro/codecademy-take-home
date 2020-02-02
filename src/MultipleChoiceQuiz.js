@@ -1,5 +1,4 @@
-import React, { Component, Fragment } from 'react';
-import { quizzes } from './quizzes';
+import React, { Component } from 'react';
 import QuizCard from './QuizCard';
 import Summary from './Summary';
 import ProgressBar from './ProgressBar';
@@ -33,6 +32,19 @@ class MultipleChoiceQuiz extends Component {
     });
   };
 
+  handleRestart = () => {
+    const questionIndex = 0;
+    const correctAnswers = 0;
+    const incorrectAnswers = 0;
+    const quizIndex = 0;
+    this.setState({
+      correctAnswers,
+      incorrectAnswers,
+      questionIndex,
+      quizIndex,
+    });
+  };
+
   handleCorrectAnswer = () => {
     const correctAnswers = this.state.correctAnswers + 1;
     this.setState({ correctAnswers });
@@ -51,6 +63,8 @@ class MultipleChoiceQuiz extends Component {
       incorrectAnswers,
     } = this.state;
 
+    const { quizzes } = this.props;
+
     const currentQuiz = quizzes[quizIndex];
     const currentQuestion = currentQuiz.questions[questionIndex];
     const quizLength = currentQuiz.questions.length;
@@ -65,6 +79,7 @@ class MultipleChoiceQuiz extends Component {
             correctAnswers={correctAnswers}
             quizIndex={quizIndex}
             totalQuizes={quizzes.length}
+            handleRestart={this.handleRestart}
           />
         ) : (
           <QuizCard

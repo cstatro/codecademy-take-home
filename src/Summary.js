@@ -8,6 +8,7 @@ const Summary = props => {
     handleNextQuiz,
     totalQuizes,
     quizIndex,
+    handleRestart,
   } = props;
 
   const randomMessage = getMessage();
@@ -22,8 +23,8 @@ const Summary = props => {
         <div className="random-message">{randomMessage}</div>
       </div>
       {quizIndex + 1 === totalQuizes ? (
-        <button className="next-button" onClick={handleNextQuiz}>
-          Restart Quizes
+        <button className="next-button" onClick={handleRestart}>
+          Restart Quizzes
         </button>
       ) : (
         <button className="next-button" onClick={handleNextQuiz}>
